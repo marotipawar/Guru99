@@ -4,7 +4,6 @@ import com.maroti.pageLayer.CheckoutCart;
 import com.maroti.pageLayer.Login;
 import com.maroti.baseLayer.SauceServices;
 import com.maroti.pageLayer.ShoppingCart;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

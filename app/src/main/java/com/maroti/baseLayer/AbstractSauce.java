@@ -29,7 +29,7 @@ public abstract class AbstractSauce implements SauceServices {
 
     @Override
     public String goTo(String url) {
-        driver.get("https://www.saucedemo.com/checkout-complete.html");
+        driver.get(url);
         return driver.getCurrentUrl();
     }
 
