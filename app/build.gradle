@@ -37,10 +37,9 @@ dependencies {
 
 testing {
     suites {
-        // Configure the built-in test suite
+        '/src/test/resources/testng.xml'
         test {
-            // Use Spock test framework
-            useSpock('2.2-groovy-3.0')
+
             useTestNG()
         }
     }
@@ -55,5 +54,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'com.maroti.App'
+    mainClass = 'com.maroti.Guru99'
 }
