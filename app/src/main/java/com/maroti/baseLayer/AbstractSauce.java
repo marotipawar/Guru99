@@ -24,13 +24,13 @@ public abstract class AbstractSauce implements SauceServices {
 
     @Override
     public WebDriver getDriver() {
-        return driver;
+        return this.driver;
     }
 
     @Override
     public String goTo(String url) {
-        driver.get(url);
-        return driver.getCurrentUrl();
+        this.driver.get(url);
+        return this.driver.getCurrentUrl();
     }
 
     @Override

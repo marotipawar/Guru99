@@ -1,24 +1,36 @@
 package com.maroti.pageLayer;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.testng.ITestListener;
-import org.testng.annotations.Listeners;
+import com.maroti.baseLayer.SauceServices;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.*;
 
-class LoginTest {
+@Test(groups = {"login"})
+public class LoginTest {
 
-    @BeforeEach
-    void setUp() {
+    private SauceServices sauce;
+    @Parameters({"url"})
+    @BeforeTest
+    public void setUp(String url) {
+        sauce= new Login(new ChromeDriver());
+        sauce.goTo(url);
     }
 
-    @AfterEach
-    void tearDown() {
+
+
+    @Test
+    public void testGetDriver() {
     }
 
-
-    void login(){
-
+    @Parameters({"username", "password"})
+    @Test(priority = 1)
+    public void testLogin(String username, String password) {
+        sauce.login(username,password);
     }
+
+    @AfterMethod
+    public void tearDown() {
+    }
+
 }
