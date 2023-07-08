@@ -1,16 +1,7 @@
 package com.maroti;
 
-import com.maroti.data.ExcelDataProvider;
-import com.maroti.model.User;
-import com.maroti.pageLayer.CheckoutCart;
-import com.maroti.pageLayer.Login;
-import com.maroti.baseLayer.SauceServices;
-import com.maroti.pageLayer.ShoppingCart;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.io.FileNotFoundException;
-import java.util.List;
+import java.nio.file.FileSystems;
 
 public class SauceApplication {
     public static void main(String[] args) throws FileNotFoundException {
@@ -31,10 +22,14 @@ public class SauceApplication {
         System.out.println(checkout.finishShopping());*/
 
 
-        List<User> users =ExcelDataProvider.readExcelData("Users.xlsx");
+        /*List<User> users =ExcelDataProvider.readExcelData("Users.xlsx");
 
         User user2=users.get(2);
-        System.out.println(user2.getFirstName()+" "+user2.getLastName());
+        System.out.println(user2.getFirstName()+" "+user2.getLastName());*/
       //users.forEach(System.out::println);
+
+
+        String path = FileSystems.getDefault().getPath("").toAbsolutePath().toString();
+        System.out.println(path);
     }
 }

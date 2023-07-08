@@ -1,18 +1,21 @@
 package com.maroti.baseLayer;
 
+import com.maroti.model.Guru99Register;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.io.IOException;
 
-public interface SauceServices {
+public interface WebDriverService {
 
     WebDriver getDriver();
 
     String goTo(String url);
 
     void implicitlyWait(WebDriver driver);
+
+    Guru99Register register(Guru99Register reg );
 
     String captureTitle(WebDriver driver);
 

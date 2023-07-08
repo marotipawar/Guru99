@@ -1,13 +1,13 @@
 package com.maroti.baseLayer;
 
-import com.maroti.baseLayer.SauceServices;
+import com.maroti.model.Guru99Register;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-public abstract class AbstractSauce implements SauceServices {
+public abstract class AbstractWebDriver implements WebDriverService {
     WebDriver driver;
     TakesScreenshot ts;
     JavascriptExecutor script;
@@ -15,7 +15,7 @@ public abstract class AbstractSauce implements SauceServices {
 
 
 
-    public AbstractSauce(WebDriver driver) {
+    public AbstractWebDriver(WebDriver driver) {
         this.driver = driver;
         TakesScreenshot ts = (TakesScreenshot) driver;
         JavascriptExecutor script = (JavascriptExecutor) driver;
@@ -101,6 +101,11 @@ public abstract class AbstractSauce implements SauceServices {
 
     @Override
     public String finishShopping() {
+        return null;
+    }
+
+    @Override
+    public Guru99Register register(Guru99Register reg) {
         return null;
     }
 }

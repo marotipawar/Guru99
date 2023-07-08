@@ -1,12 +1,12 @@
-package com.maroti.pageLayer;
+package com.maroti.pageLayer.sauce;
 
-import com.maroti.baseLayer.AbstractSauce;
+import com.maroti.baseLayer.AbstractWebDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Login extends AbstractSauce {
+public class Login extends AbstractWebDriver {
     @FindBy(xpath = "//form/child::div[1]/input")
     private WebElement usernameElement;
     @FindBy(xpath = "//form/child::div[2]/input")

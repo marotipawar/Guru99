@@ -1,15 +1,14 @@
 package com.maroti.pageLayer;
 
-import com.maroti.baseLayer.SauceServices;
+import com.maroti.baseLayer.WebDriverService;
+import com.maroti.pageLayer.sauce.Login;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-
-import static org.testng.Assert.*;
 
 @Test(groups = {"login"})
 public class LoginTest {
 
-    private SauceServices sauce;
+    private WebDriverService sauce;
     @Parameters({"url"})
     @BeforeTest
     public void setUp(String url) {

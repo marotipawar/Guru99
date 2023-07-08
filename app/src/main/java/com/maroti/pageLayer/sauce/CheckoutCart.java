@@ -1,12 +1,12 @@
-package com.maroti.pageLayer;
+package com.maroti.pageLayer.sauce;
 
-import com.maroti.baseLayer.AbstractSauce;
+import com.maroti.baseLayer.AbstractWebDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutCart extends AbstractSauce {
+public class CheckoutCart extends AbstractWebDriver {
 
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     WebElement checkoutElement;
