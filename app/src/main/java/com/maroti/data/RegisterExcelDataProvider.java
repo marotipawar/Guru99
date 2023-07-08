@@ -14,12 +14,11 @@ import java.util.List;
 
 public class RegisterExcelDataProvider {
 
-    public static List<Guru99Register> getExcelData() throws FileNotFoundException {
+    public static List<Guru99Register> getExcelData(String fileName) throws FileNotFoundException {
 
         List<Guru99Register> registers=null;
 
-        try(FileInputStream readExcelFile = new FileInputStream(new File("data", "RegisterData.xlsx")) ) {
-
+        try(FileInputStream readExcelFile = new FileInputStream(new File("data", fileName)) ) {
             XSSFWorkbook workbook = new XSSFWorkbook(readExcelFile);
             XSSFSheet sheet =workbook.getSheetAt(0);
             int rowSize=sheet.getLastRowNum();
@@ -48,9 +47,9 @@ public class RegisterExcelDataProvider {
         return registers;
     }
 
-  /* public static void main(String[] args) throws FileNotFoundException {
-        getExcelData().forEach(reg->{
+   public static void main(String[] args) throws FileNotFoundException {
+        getExcelData("RegisterData.xlsx").forEach(reg->{
             System.out.println(reg.getCountry());
         });
-    }*/
+    }
 }

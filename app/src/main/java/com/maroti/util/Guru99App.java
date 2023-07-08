@@ -15,7 +15,7 @@ public class Guru99App {
 
         WebDriverService driver = new RegisterServiceImpl(new ChromeDriver());
         driver.goTo("https://demo.guru99.com/test/newtours/register.php");
-        RegisterExcelDataProvider.getExcelData().forEach(reg->{
+        RegisterExcelDataProvider.getExcelData("RegisterData.xlsx").forEach(reg->{
             driver.register(reg);
             driver.goTo("https://demo.guru99.com/test/newtours/register.php");
         });
